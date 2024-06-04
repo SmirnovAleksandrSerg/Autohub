@@ -1,0 +1,15 @@
+apply plugin: "${rootProject.ext.VortexPlugin}"
+
+dependencies { configuration ->
+    implementation project(":data")
+    lifeCycleConfiguration(configuration)
+    koinConfiguration(configuration)
+    databaseConfiguration(configuration)
+}
+
+private void koinConfiguration(configuration) {
+    def KoinConfiguration = rootProject.ext.KoinConfiguration
+    configuration.implementation KoinConfiguration.KoinAndroid
+    configuration.implementation KoinConfiguration.KoinLifecycle
+    configuration.implementation KoinConfiguration.KoinViewModel
+}

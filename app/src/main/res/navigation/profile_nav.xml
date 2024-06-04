@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_nav.xml"
+    app:startDestination="@id/profileFragment">
+
+    <fragment
+        android:id="@+id/profileFragment"
+        tools:layout="@layout/fragment_profile"
+        android:name="com.yazan98.autohub.fragments.main.ProfileFragment"
+        android:label="ProfileFragment" >
+
+        <action
+            android:id="@+id/action_profileFragment_to_profileFollowingFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit"
+            app:destination="@id/profileFollowingFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_repositoryFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit"
+            app:destination="@id/repositoryFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFollowingFragment"
+        android:name="com.yazan98.autohub.fragments.profile.ProfileFollowingFragment"
+        android:label="ProfileFollowingFragment" />
+    <fragment
+        android:id="@+id/repositoryFragment"
+        android:name="com.yazan98.autohub.fragments.repo.RepositoryFragment"
+        android:label="RepositoryFragment" />
+
+</navigation>
